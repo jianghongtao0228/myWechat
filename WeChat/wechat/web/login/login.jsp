@@ -19,13 +19,6 @@
                 <button >登录</button>
                 <div class="error"><span>+</span></div>
             </form>
-            <div class="connect">
-                <p>介绍:</p>
-                <p>
-                    <a class="facebook" href=""></a>
-                    <a class="twitter" href=""></a>
-                </p>
-            </div>
         </div>
         <script type="text/javascript" src="<%=request.getContextPath()%>/login/js/supersized.3.2.7.min.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath()%>/login/js/supersized-init.js"></script>
