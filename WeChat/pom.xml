@@ -13,7 +13,7 @@
 	<!-- 常量定义 -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.build.target>1.7</project.build.target>
+		<project.build.target>1.8</project.build.target>
 	</properties>
 
 	<build>
@@ -70,7 +70,7 @@
 						</manifest>
 						<manifestEntries>
 							<Implementation-Build>${buildNumber}</Implementation-Build>
-							<Target-Jdk>1.7</Target-Jdk>
+							<Target-Jdk>${project.build.target}</Target-Jdk>
 						</manifestEntries>
 					</archive>
 				</configuration>

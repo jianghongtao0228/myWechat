@@ -13,15 +13,18 @@
 	<body>
 		<div class="page-container">
             <h1>用户登录</h1>
-            <form action="" method="post">
+            <form>
                 <input type="text" name="username" class="username" placeholder="用户名">
                 <input type="password" name="password" class="password" placeholder="密码">
-                <button id="login">登录</button>
+                <button id="login" >登录</button>
                 <div class="error"><span>+</span></div>
             </form>
+            <div class="connect">
+                <p class="msg"></p>
+            </div>
         </div>
         <script type="text/javascript" src="<%=request.getContextPath()%>/login/js/supersized.3.2.7.min.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath()%>/login/js/supersized-init.js"></script>
-        <script type="text/javascript" src="<%=request.getContextPath()%>/login/js/scripts.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath()%>/login/js/login.js"></script>
 	</body>
 </html>
