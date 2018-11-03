@@ -16,7 +16,7 @@
             <form action="" method="post">
                 <input type="text" name="username" class="username" placeholder="用户名">
                 <input type="password" name="password" class="password" placeholder="密码">
-                <button >登录</button>
+                <button id="login">登录</button>
                 <div class="error"><span>+</span></div>
             </form>
         </div>
