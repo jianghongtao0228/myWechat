@@ -10,4 +10,7 @@ public class TestController {
     public String test(){
         return "login/login";
     }
+
+    @RequestMapping("/test2")
+    public String test2(){return "this is my test"}
 }
