@@ -77,4 +77,12 @@
 			</plugin>
 		</plugins>
 	</build>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate</artifactId>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>

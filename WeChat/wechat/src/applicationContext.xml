@@ -1,15 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
-  xmlns:context="http://www.springframework.org/schema/context" xmlns:security="http://www.springframework.org/schema/security"
+  xmlns:context="http://www.springframework.org/schema/context"
   xsi:schemaLocation="
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
 http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
-http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+http://www.springframework.org/schema/tx
 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
-http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+http://www.springframework.org/schema/security">
 
   <context:component-scan base-package="com.jht.wechat" />
   <!-- springMVC action配置 -->
   <import resource="classpath:spring/spring-mvc.xml"/>
+  <bean id="configProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+    <property name="ignoreResourceNotFound" value="true" />
+    <property name="locations">
+      <list>
+        <value>classpath*:/props/config.properties</value>
+      </list>
+    </property>
+  </bean>
+  <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+    <property name="driverClass">
+      <value>${dataSource.driverClass}</value>
+    </property>
+    <property name="jdbcUrl">
+      <value>${dataSource.jdbcUrl}</value>
+    </property>
+    <property name="user">
+      <value>${dataSource.user}</value>
+    </property>
+    <property name="password">
+      <value>${dataSource.password}</value>
+    </property>
+    <!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
+    <property name="acquireIncrement">
+      <value>${dataSource.acquireIncrement}</value>
+    </property>
+    <!--初始化时获取三个连接，取值应在minPoolSize与maxPoolSize之间。Default: 3 -->
+    <property name="initialPoolSize">
+      <value>${dataSource.initialPoolSize}</value>
+    </property>
+    <!--连接池中保留的最大连接数。Default: 15 -->
+    <property name="maxPoolSize">
+      <value>${dataSource.maxPoolSize}</value>
+    </property>
+    <!--连接池中保留的最小连接数。 -->
+    <property name="minPoolSize">
+      <value>${dataSource.minPoolSize}</value>
+    </property>
+    <property name="preferredTestQuery" value="${cpool.preferredTestQuery}" />
+    <property name="idleConnectionTestPeriod" value="${cpool.idleConnectionTestPeriod}" />
+    <property name="testConnectionOnCheckout" value="${cpool.testConnectionOnCheckout}" />
+    <!--如果设为true那么在取得连接的同时将校验连接的有效性。 -->
+    <property name="testConnectionOnCheckin" value="${cpool.testConnectionOnCheckin}" />
+  </bean>
 </beans>
