@@ -6,12 +6,11 @@
 		<version>1.0</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
-	<modelVersion>1.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 	<artifactId>wechat-pojo</artifactId>
 	<name>wechat-pojo</name>
 	<description>wechat-pojo</description>
 	<packaging>jar</packaging>
 	<dependencies>
-	
 	</dependencies>
 </project>
